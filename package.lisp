@@ -342,8 +342,6 @@ contain at least two BeakerConfigurations in that configuration."
     (let (PuzzleState puz) = puz)
     (map:keys puz))
 
-  ;; TODO: invert paragraph: start with "generate successor states", then explain how
-
   ;; When we search for a solution, we'll want a function that, given a PuzzleState, yields all of its
   ;; successors, i.e. all of the PuzzleStates you can reach by making any one valid move. Our search algorithm
   ;; will chain these steps together, until it finds a successor's successor's successor (etc) starting from
@@ -377,7 +375,6 @@ contain at least two BeakerConfigurations in that configuration."
     ;; once again, we're interested only in unique beakers here, but we need to know the count to know if we
     ;; can pour A into A' where (== A A')
 
-    ;; TODO: explain use of UNCURRY to destructure tuples
     (pipe (puzzle-beakers-with-counts puz)
           ;; also, it's never useful to pour from a "solved" beaker, i.e. an empty beaker or a full
           ;; consolidated beaker. so we'll skip those when determining our possible source beakers.
