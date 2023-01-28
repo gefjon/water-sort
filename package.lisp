@@ -51,7 +51,7 @@
   ;; Your goal is to consolidate the liquids of the same color, so that each vial either contains 4 units of
   ;; the same color of liquid, or is empty.
 
-  ;; For example, the following is a solved state from the above initial state:
+  ;; The following is a solved state from the above initial state:
   ;; - ()
   ;; - (red red red red)
   ;; - (green green green green)
@@ -130,6 +130,7 @@
 
   ;; To avoid the map growing larger than it should (to keep the n in that O(logn) small), we won't store
   ;; BeakerConfigurations with counts of zero, i.e. beakers which aren't in the puzzle.
+  (repr :transparent)
   (define-type PuzzleState
     (PuzzleState (map:Map BeakerConfiguration
                           ;; maps each variety of BeakerConfiguration to the number of beakers in that
@@ -141,12 +142,14 @@
   ;; - Remove the topmost color.
   ;; The savvy programmer will note that lists have those two operations.
   ;; A beaker will be a list, with its "top" in its first and its "bottom" in its last.
+  (repr :transparent)
   (define-type BeakerConfiguration
     ;; with length <= 4
     (BeakerConfiguration (List Color)))
 
   ;; Now something easy: define Color. Defining an enum with all of the possible colors seems unnecessary and
   ;; restrictive, so colors will be a newtype around integers.
+  (repr :transparent)
   (define-type Color
     (Color UFix))
 
