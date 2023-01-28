@@ -39,7 +39,7 @@
   ;; For each color of liquid in the puzzle, there will always be exactly 4 units of that color distributed
   ;; around the initial state.
 
-  ;; For example, a beaker might have one unit of red unit underneath one unit of blue liquid underneath one
+  ;; A beaker might have one unit of red unit underneath one unit of blue liquid underneath one
   ;; unit of red liquid. The following is a sample initial state:
   ;; - (red green blue red)
   ;; - (blue green red red)
